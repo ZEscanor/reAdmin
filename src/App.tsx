@@ -17,10 +17,12 @@ import { App as AntdApp } from "antd";
 
 import  Layout  from "./components/layout/index";
 
-import { createClient } from "graphql-ws";
+
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
-import {Home, ForgotPassword, Login, Register} from './pages';
+import {Home, ForgotPassword, Login, Register, CompanyList} from './pages';
+import Create from "./pages/company/create";
 import { resources } from "./config/resources";
+
 
 
 const API_URL = "https://api.nestjs-query.refine.dev/graphql";
@@ -72,6 +74,11 @@ function App() {
                 }>
 
                   <Route index element={<Home/>}/>
+                  <Route path="/companies">
+                    <Route index element={<CompanyList/>}/>
+                    <Route path='new' element= {<Create/>}/>
+                  </Route>
+                  
                   </Route>
                   
                 </Routes>
