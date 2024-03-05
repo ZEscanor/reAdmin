@@ -1,5 +1,9 @@
-import { DndContext } from '@dnd-kit/core'
+import { DndContext, DragEndEvent } from '@dnd-kit/core'
 import React from 'react'
+
+type Props = {
+  onDragEnd: (event: DragEndEvent) => void
+}
 
 export const KanbanBoardContainer = ({children} : React.PropsWithChildren) => {
   return (
@@ -32,9 +36,9 @@ export const KanbanBoardContainer = ({children} : React.PropsWithChildren) => {
   )
 }
 
-export const KanbanBoard = ({children}: React.PropsWithChildren) => {
+export const KanbanBoard = ({children, onDragEnd}: React.PropsWithChildren<Props>) => {
     return (
-        <DndContext>
+        <DndContext onDragEnd={onDragEnd}>
           {children}
         </DndContext>
     )
