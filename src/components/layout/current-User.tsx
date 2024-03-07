@@ -14,7 +14,7 @@ export const CurrentUser = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const {data: user} = useGetIdentity<User>()
-  console.log(user, 'our user data')
+  // console.log(user, 'our user data')
 
   const content = (
     <div style={{

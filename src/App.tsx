@@ -24,6 +24,8 @@ import Create from "./pages/company/create";
 import EditPage from "./pages/company/edit";
 import { resources } from "./config/resources";
 import TaskList from "./pages/tasks/taskList";
+import CreateTask from "./pages/tasks/createTask";
+import EditTasks from "./pages/tasks/editTasks";
 
 
 
@@ -81,8 +83,15 @@ function App() {
                     <Route path='new' element= {<Create/>}/>
                     <Route path='edit/:id' element= {<EditPage/>}/>
                   </Route>
-                  <Route path="/tasks">
-                    <Route index element= {<TaskList/>}/>
+                  <Route path="/tasks" 
+                  element={
+                  <TaskList>
+                    <Outlet/>
+                  </TaskList>
+                }>
+                  
+               <Route path="new" element={<CreateTask/>} />
+               <Route path="edit/:id" element={<EditTasks/>} />
                   </Route>
                   
                   </Route>

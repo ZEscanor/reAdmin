@@ -35,7 +35,7 @@ const LatestActivities = () => {
     }
    })
 
-   console.log(deals)
+  // console.log(deals)
 
    if(isError){
     console.log(error)

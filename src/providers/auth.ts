@@ -4,7 +4,7 @@ import { API_URL, dataProvider } from "./data";
 
 // demo credentials for app
 export const authCredentials = {
-  email: "michael.scott@dundermifflin.com",
+  email: "admin.user@dundermifflin.com",
   password: "demodemo",
 };
 
